@@ -90,6 +90,7 @@ export default props => {
     <Aux>
       <Modal show={purchasingState} modalClosed={purchaseCancelHandler}>
         <OrderSummary
+          price={burgerState.totalPrice}
           purchaseContinued={purchaseContinueHandler}
           purchaseCanceled={purchaseCancelHandler}
           ingredients={burgerState.ingredients}
