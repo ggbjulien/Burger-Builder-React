@@ -25,6 +25,10 @@ export default props => {
     totalPrice: 1
   });
 
+  const purchaseContinueHandler = () => {
+    alert("You Continue !");
+  };
+
   const purchaseCancelHandler = () => {
     setPurchasingState(false);
   };
@@ -85,7 +89,11 @@ export default props => {
   return (
     <Aux>
       <Modal show={purchasingState} modalClosed={purchaseCancelHandler}>
-        <OrderSummary ingredients={burgerState.ingredients} />
+        <OrderSummary
+          purchaseContinued={purchaseContinueHandler}
+          purchaseCanceled={purchaseCancelHandler}
+          ingredients={burgerState.ingredients}
+        />
       </Modal>
 
       <Burger ingredients={burgerState.ingredients} />
